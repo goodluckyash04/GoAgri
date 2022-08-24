@@ -1,0 +1,17 @@
+npm init
+npm i express
+npm i mongoose
+
+npm install -g nodemon
+npm i -D  nodemon
+nodemon .\index.js
+
+
+npm install jsonwebtoken
+npm i bcrypt
+
+
+
+npm i react-router-dom@6 concurrently
+add this command to package.json>>script
+"both":"concurrently \"npm start\" \"nodemon backend/index.js\""
