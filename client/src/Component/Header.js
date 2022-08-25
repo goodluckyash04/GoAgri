@@ -1,18 +1,20 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../Context/products/Cartstate";
+import Search from "./Search";
 
 export default function Header(props) {
   const cart = useContext(CartContext);
   const navigate = useNavigate();
   const navigate1 = useNavigate();
+
   const alogout = () => {
     localStorage.removeItem("admintoken");
     navigate1("/adminlogin");
   };
   const logout = () => {
     localStorage.removeItem("token");
-    props.alert("Logged Out","success")
+    props.alert("Logged Out", "success");
     navigate("/login");
   };
   return (
@@ -42,12 +44,22 @@ export default function Header(props) {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav" style={{ zIndex: 2 }}>
+            <div className="navbar-nav pt-3" style={{ zIndex: 2 }}>
               <Link className="nav-link active" aria-current="page" to="/">
-                HOME
+                <span
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show"
+                >
+                  HOME
+                </span>
               </Link>
               <Link className="nav-link active" to="/product">
-                PRODUCTS
+                <span
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show"
+                >
+                  PRODUCTS
+                </span>
               </Link>
               <li className="nav-item dropdown">
                 <Link
@@ -57,16 +69,23 @@ export default function Header(props) {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  CATEGORY
+                  <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
+                  CATEGORY</span>
                 </Link>
-                <ul className="dropdown-menu" style={{width:"100vh",backgroundColor:"#aeeeb9"}}>
-                  <li>
-                    <Link className="dropdown-item " to="/product/fruits">
+                <ul
+                  className="dropdown-menu"
+                  style={{ width: "100vh", backgroundColor: "#aeeeb9" }}
+                >
+                  <li >
+                    <Link className="dropdown-item " to="/product/fruits" >
                       Fruits
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item " to="/product/vegetables">
+                    <Link className="dropdown-item " to="/product/vegetables" >
                       Vegetables
                     </Link>
                   </li>
@@ -85,10 +104,10 @@ export default function Header(props) {
                   </li>
                 </ul>
               </li>
-              <Link to="/search" className="nav-link active">
-                SEARCH &nbsp;
-                <i className="fa-solid fa-magnifying-glass"></i>
-              </Link>
+              <div className="nav-link active">
+                <Search /><span data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show"></span>
+              </div>
             </div>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               {localStorage.getItem("token") ? (
@@ -98,8 +117,15 @@ export default function Header(props) {
                       className="nav-link active"
                       aria-current="page"
                       to="/login"
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
                     >
-                      <i className="fa-regular fa-user"></i>&nbsp;&nbsp;LOGIN
+                       <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
+                          <i className="fa-regular fa-user "></i>&nbsp;&nbsp;LOGIN
+                        </span>
                     </Link>
                   </li>
                 ) : (
@@ -110,8 +136,12 @@ export default function Header(props) {
                         aria-current="page"
                         to="/wishlist"
                       >
+                        <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
                         <i className="fa-regular fa-heart"></i>
-                        &nbsp;&nbsp;WISHLIST
+                        &nbsp;&nbsp;WISHLIST</span>
                       </Link>
                     </li>
                     <li className="nav-item">
@@ -120,8 +150,13 @@ export default function Header(props) {
                         aria-current="page"
                         to="/cart"
                       >
-                        <i className="fa-solid fa-cart-shopping"></i>
-                        &nbsp;&nbsp;CART
+                        <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
+                          <i className="fa-solid fa-cart-shopping"></i>
+                          &nbsp;&nbsp;CART
+                        </span>
                         {cart.cartList.length ? (
                           <span className="position-absolute top-10 translate-middle badge rounded bg-danger">
                             {cart.cartList.length}
@@ -137,8 +172,12 @@ export default function Header(props) {
                         aria-current="page"
                         to="/myaccount"
                       >
+                        <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
                         <i className="fa-regular fa-user"></i>
-                        &nbsp;&nbsp;ACCOUNT
+                        &nbsp;&nbsp;ACCOUNT</span>
                       </Link>
                     </li>
                     <li className="nav-item">
@@ -148,8 +187,12 @@ export default function Header(props) {
                         to="/login"
                         onClick={logout}
                       >
+                         <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
                         <i className="fa-solid fa-right-from-bracket"></i>
-                        &nbsp;&nbsp;LOGOUT
+                        &nbsp;&nbsp;LOGOUT</span>
                       </Link>
                     </li>
                   </>
@@ -161,7 +204,11 @@ export default function Header(props) {
                     aria-current="page"
                     to="/login"
                   >
-                    <i className="fa-regular fa-user"></i>&nbsp;&nbsp;LOGIN
+                    <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
+                    <i className="fa-regular fa-user"></i>&nbsp;&nbsp;LOGIN</span>
                   </Link>
                 </li>
               ) : (
@@ -172,8 +219,12 @@ export default function Header(props) {
                       aria-current="page"
                       to="/addproduct"
                     >
+                      <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
                       <i className="fa-solid fa-cart-shopping"></i>
-                      &nbsp;&nbsp;Product
+                      &nbsp;&nbsp;Product</span>
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -183,8 +234,12 @@ export default function Header(props) {
                       to="/adminlogin"
                       onClick={alogout}
                     >
+                      <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
                       <i className="fa-solid fa-right-from-bracket"></i>
-                      &nbsp;&nbsp;LOGOUT
+                      &nbsp;&nbsp;LOGOUT</span>
                     </Link>
                   </li>
                 </>

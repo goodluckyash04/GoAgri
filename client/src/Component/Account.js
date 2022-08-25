@@ -100,38 +100,38 @@ export default function Account(props) {
       <div className="row justify-content-between">
         <div className="mb-5 col-3"> <EditAccount detail={details} acdetail={ accountDetail} alert={props.alert}/></div>
       <Link  className="col-2 text-success" to="/resetpassword">Reset Password</Link>
-        <button className="btn btn-success mb-5 col-3" onClick={()=>{userdelete(id)}}>
-          Permenantly Delete Account
+        <button className="btn btn-success mb-5 me-2  col-3" onClick={()=>{userdelete(id)}}>
+           Delete Account
         </button>
       </div>
       <div className=" mt-3 p-3">
         <h3 className="text-success my-3">Order Detail</h3>
         <div className="row" >
-              <div className="col-md-1">
+              <div className="col-1">
               <h4><b className="text-success">Sr.</b></h4>
               </div>
-              <div className="col-md-2">
+              <div className="col-2">
               <h4><b className="text-success">Date</b></h4>
               </div>
-              <div className="col-md-6">
+              <div className="col-6">
               <h4><b className="text-success">OrderId</b></h4>
               </div>
-              <div className="col-md-3">
+              <div className="col-3">
               <h4><b className="text-success">Amount</b></h4>
               </div>
             </div>
             {oDetail && oDetail.map((o,i)=>{
              return <div className="row mt-2 fs-5" key={i}>
-              <div className="col-md-1">
+              <div className="col-1">
                 {i+1}
               </div>
-              <div className="col-md-2">
+              <div className="col-2">
               <p>{o.date}</p>
               </div>
-              <div className="col-md-6">
+              <div className="col-6">
               <p>{o.orderId}</p>
               </div>
-              <div className="col-md-3">
+              <div className="col-3">
               <p> ₹ {o.total}</p>
               </div>
             </div>

@@ -53,6 +53,7 @@ function App() {
                 <Route path="adminsignup" element={<AdminSignup />} />
                 <Route path="addproduct" element={<AddProduct />} />
                 <Route path="product" element={<Product />} />
+                <Route path="product" element={<Product />} />
                 <Route path="cart" element={<Cart />} />
                 <Route path="wishlist" element={<Wishlist />} />
                 <Route path="myaccount" element={<Account alert={showalert}  />} />

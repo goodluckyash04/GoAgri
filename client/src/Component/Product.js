@@ -21,7 +21,7 @@ export default function Product() {
         <div className="row justify-content-around mb-5">
           {cat.map((c, index) => {
             return (
-              <div className="col-md-2 my-3" key={index}>
+              <div className="col-6 col-md-2 my-3" key={index}>
                 <div className="card">
                   <Link to={`/product/${c.title}`}>
                     <img

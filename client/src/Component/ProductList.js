@@ -34,7 +34,7 @@ export default function ProductList(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return (
-    <div className="col-md-3 my-3">
+    <div className="col-11 col-md-3 my-3">
       <div className="card">
         <Link to={`/product/${props.product._id}`}>
         <img

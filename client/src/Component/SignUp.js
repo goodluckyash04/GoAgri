@@ -44,7 +44,7 @@ export default function SignUp(props) {
               className="form-control"
               id="name"
               name="name"
-              onChange={(e)=>onChange(e)}
+              onChange={onChange}
               required
               placeholder="Enter your Name*"
               
@@ -56,7 +56,7 @@ export default function SignUp(props) {
               className="form-control"
               id="email"
               name="email"
-              onChange={(e)=>onChange(e)}
+              onChange={(e)=>{setDetails({...details,email:e.target.value.toLowerCase()})}}
               required
               placeholder="Enter your Email*"
             />
@@ -68,7 +68,7 @@ export default function SignUp(props) {
               className="form-control"
               id="password"
               name="password"
-              onChange={(e)=>onChange(e)}
+              onChange={onChange}
               minLength={5}
               required
               placeholder="Enter Password*"
@@ -80,7 +80,7 @@ export default function SignUp(props) {
               className="form-control"
               id="cpassword"
               name="cpassword"
-              onChange={(e)=>onChange(e)}
+              onChange={onChange}
               required
               placeholder="Re-enter Password*"
             />
@@ -95,7 +95,7 @@ export default function SignUp(props) {
                     name="gender"
                     id="male"
                     value="Male"
-                  onChange={(e)=>onChange(e)}
+                  onChange={onChange}
                   />
                   <label className="form-check-label" htmlFor="male">
                     Male
@@ -108,7 +108,7 @@ export default function SignUp(props) {
                     name="gender"
                     id="female"
                     value="Female"
-                    onChange={(e)=>onChange(e)}
+                    onChange={onChange}
                   />
                   <label className="form-check-label" htmlFor="female">
                     Female
@@ -124,7 +124,7 @@ export default function SignUp(props) {
                   id="age"
                   name="age"
                   maxLength={2}
-              onChange={(e)=>onChange(e)}
+              onChange={onChange}
                   placeholder="Enter your Age"             
                 />
               </div>
@@ -137,7 +137,7 @@ export default function SignUp(props) {
               placeholder="Enter Your Address"
               id="address"
               name="address"
-              onChange={(e)=>onChange(e)}
+              onChange={onChange}
               style={{ height: "100px" }}
             />
           </div>

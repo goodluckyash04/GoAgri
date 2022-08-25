@@ -18,14 +18,14 @@ export default function About() {
             style={{
               fontFamily: "Roboto",
               fontSize: "3.5rem",
-              padding: "4rem 0 0 0",
+              padding: "8rem 0 0 0"
             }}
           >
             Welcome to Agriculture Hub
           </h2>
           <div className=" text-center text-success ">
             <Link to="/product">
-              <button className="btn btn-outline-success text-center">
+              <button className="btn btn-success text-center">
                 Explore &rarr;
               </button>
             </Link>

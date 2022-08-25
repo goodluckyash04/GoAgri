@@ -20,10 +20,11 @@ export default function UserLogin(props) {
       localStorage.setItem("token", json.authToken);
       navigate("/product");
       props.alert("Logged In", "success");
+      setDetails({ email: "", password: "" });
     } else {
       alert("Check Credentials");
     }
-    setDetails({ email: "", password: "" });
+  
   };
 
   const onChange = (e) => {
@@ -67,7 +68,7 @@ export default function UserLogin(props) {
               value={email}
               placeholder="Enter your email"
               onChange={(e) => {
-                onChange(e);
+                setDetails({ ...details, email: e.target.value.toLowerCase() })
               }}
             />
             <div id="emailHelp" className="form-text">

@@ -40,7 +40,7 @@ export default function AdminProductList() {
       <h2 className="text-success text-center border-bottom border-success">
         My Product List - {viewproduct.length} Items Added
       </h2>
-
+      <div className="table-responsive"> 
       <table className="table">
         <thead>
           <tr>
@@ -70,6 +70,7 @@ export default function AdminProductList() {
           )}
         </tbody>
       </table>
+      </div>
       {/* ...........................Edit Product.................. */}
       <div>
        
