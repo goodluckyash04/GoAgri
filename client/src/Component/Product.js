@@ -30,9 +30,6 @@ export default function Product() {
                       alt="..."
                       style={{ minHeight: "10rem", maxHeight: "10rem" }}
                     />
-                    {/* <div className="card-body">
-                <h5 className="card-title">{c.title}</h5>
-              </div> */}
                   </Link>
                 </div>
               </div>

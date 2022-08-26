@@ -22,8 +22,6 @@ export default function ProductList(props) {
   const addcart = ()=>{
     if(localStorage.getItem("token")){
       addtocart(title,price,quantity)
-    }else{
-      alert("Please Login to addproduct to Wishlist")
     }
   }
   useEffect(()=>{

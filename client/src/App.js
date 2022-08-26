@@ -14,7 +14,7 @@ import Product from "./Component/Product";
 import Cart from "./Component/Cart";
 import Account from "./Component/Account";
 import Productstate from "./Context/products/Productstate";
-import Search from "./Component/Search";
+import Search, { SearchPage } from "./Component/Search";
 import OrderNow from "./Component/OrderNow";
 import Resetpsw from "./Component/Resetpsw";
 import Wishlist from "./Component/Wishlist";
@@ -52,8 +52,7 @@ function App() {
                 <Route path="adminlogin" element={<AdminLogin />} />
                 <Route path="adminsignup" element={<AdminSignup />} />
                 <Route path="addproduct" element={<AddProduct />} />
-                <Route path="product" element={<Product />} />
-                <Route path="product" element={<Product />} />
+                <Route path="product" element={<Product  />} />
                 <Route path="cart" element={<Cart />} />
                 <Route path="wishlist" element={<Wishlist />} />
                 <Route path="myaccount" element={<Account alert={showalert}  />} />
@@ -65,6 +64,8 @@ function App() {
                 <Route path="ordernow" element={<OrderNow alert={showalert}/>} />
                 <Route path="resetpassword" element={<Resetpsw alert={showalert} />} />
                 <Route path="product/:id" element={<Productdetail />} />
+                <Route path="searchpage" element={<SearchPage />} />
+                
               </Routes>
               <Footer />
             </BrowserRouter>
