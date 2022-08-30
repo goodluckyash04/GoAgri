@@ -6,6 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `Project Link`
+https://goagriculture.herokuapp.com/
+
 ### `npm start`
 
 Runs the app in the development mode.\
