@@ -8,6 +8,9 @@ In the project directory, you can run:
 
 ### `Project Link`
 https://goagriculture.herokuapp.com/
+### About Project
+this project is created using Mngodb,Expressjs,React,NodeJS(MERN)
+it is an-commerce platform for agriculture products where admin can access product and buyer can buy product
 
 ### `npm start`
 
