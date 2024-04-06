@@ -15,7 +15,7 @@ export default function AdminSignup() {
     e.preventDefault();
     if (adminkey === process.env.REACT_APP_ADMIN_KEY) {
       const response = await fetch(
-        "/api/authadmin/createadmin",
+        `${process.env.REACT_APP_SERVER}/api/authadmin/createadmin`,
         {
           method: "POST",
           headers: {
@@ -128,7 +128,7 @@ export default function AdminSignup() {
           </button>
           <br />
           <Link to="/adminlogin" className="btn btn-outline-success me-5">
-           Login
+            Login
           </Link>
         </div>
       </div>

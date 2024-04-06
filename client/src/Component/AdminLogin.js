@@ -1,34 +1,35 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-
 export default function AdminLogin() {
-  const [details,setDetails]=useState({email:"",password:""})
-  const {email,password}= details
-  const navigate = useNavigate()
- 
-  const login =async (e)=>{
-    e.preventDefault()
-      const response = await fetch("/api/authadmin/adminlogin", {
-        method: 'POST',
+  const [details, setDetails] = useState({ email: "", password: "" });
+  const { email, password } = details;
+  const navigate = useNavigate();
+
+  const login = async (e) => {
+    e.preventDefault();
+    const response = await fetch(
+      `${process.env.REACT_APP_SERVER}/api/authadmin/adminlogin`,
+      {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({email,password}) // body data type must match "Content-Type" header
-      });
-      const json =await response.json();
-      if(json.success){
-        localStorage.setItem('admintoken',json.authToken)
-        navigate("/addproduct")
-      }else{
-        alert("Check Credentials")
+        body: JSON.stringify({ email, password }), // body data type must match "Content-Type" header
       }
-      
+    );
+    const json = await response.json();
+    if (json.success) {
+      localStorage.setItem("admintoken", json.authToken);
+      navigate("/addproduct");
+    } else {
+      alert("Check Credentials");
     }
-  
-  const onChange=(e)=>{
-    setDetails({...details,[e.target.name]:e.target.value})
-  }
+  };
+
+  const onChange = (e) => {
+    setDetails({ ...details, [e.target.name]: e.target.value });
+  };
   return (
     <form
       className="container mt-5"

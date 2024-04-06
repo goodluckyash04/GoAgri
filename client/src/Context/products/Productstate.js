@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 export const ProductContext = createContext();
 
 export default function Productstate(props) {
-  const host = "/api/product";
+  const host = `${process.env.REACT_APP_SERVER}/api/product`;
 
   // const [viewlist,setViewlist] = useState([])
   const [product, setProduct] = useState([]);
