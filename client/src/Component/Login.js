@@ -8,13 +8,16 @@ export default function UserLogin(props) {
 
   const login = async (e) => {
     e.preventDefault();
-    const response = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
+    const response = await fetch(
+      `${process.env.REACT_APP_SERVER}/api/auth/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      }
+    );
     const json = await response.json();
     if (json.success) {
       localStorage.setItem("token", json.authToken);
@@ -24,7 +27,6 @@ export default function UserLogin(props) {
     } else {
       alert("Check Credentials");
     }
-  
   };
 
   const onChange = (e) => {
@@ -68,7 +70,7 @@ export default function UserLogin(props) {
               value={email}
               placeholder="Enter your email"
               onChange={(e) => {
-                setDetails({ ...details, email: e.target.value.toLowerCase() })
+                setDetails({ ...details, email: e.target.value.toLowerCase() });
               }}
             />
             <div id="emailHelp" className="form-text">
@@ -90,7 +92,8 @@ export default function UserLogin(props) {
           </div>
           <button type="submit" className="btn btn-success mb-4">
             Login
-          </button><br />
+          </button>
+          <br />
           <Link to="/signup" className=" link-success  mb-2 ">
             Create Account ?
           </Link>
